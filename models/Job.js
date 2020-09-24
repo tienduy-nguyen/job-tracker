@@ -10,14 +10,14 @@ const JobSchema = new Schema({
     type: String,
     required: true,
   },
-  contract_type: {
+  contractType: {
     type: String,
   },
   description: {
     type: String,
     require: true,
   },
-  level_exp: {
+  levelExp: {
     type: String,
   },
   salary: {
@@ -33,14 +33,14 @@ const JobSchema = new Schema({
   longitude: {
     type: Number,
   },
-  job_date: {
+  jobDate: {
     type: Date,
     default: Date.now,
   },
-  more_info: {
+  moreInfo: {
     type: String,
   },
-  link_job: {
+  linkJob: {
     type: String,
     required: true,
   },

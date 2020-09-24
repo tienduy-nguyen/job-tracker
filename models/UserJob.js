@@ -21,19 +21,19 @@ const UserJobSchema = new Schema({
     type: Boolean,
     default: false,
   },
-  interview_1: {
+  interview1: {
     type: Date.now,
     default: Date.now,
   },
-  interview_2: {
+  interview2: {
     type: Date.now,
     default: Date.now,
   },
-  interview_3: {
+  interview3: {
     type: Date.now,
     default: Date.now,
   },
-  interview_4: {
+  interview4: {
     type: Date.now,
     default: Date.now,
   },
