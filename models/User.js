@@ -16,6 +16,7 @@ const UserSchema = new Schema({
   email: {
     type: String,
     required: true,
+    unique: true,
   },
   password: {
     type: String,
@@ -23,6 +24,10 @@ const UserSchema = new Schema({
   },
   avatar: {
     type: String,
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false,
   },
   notices: [
     {

@@ -5,10 +5,7 @@ const CompanySchema = new Schema({
   name: {
     type: String,
     required: true,
-  },
-  address: {
-    type: String,
-    require: true,
+    unique: true,
   },
   website: {
     type: String,
@@ -16,9 +13,17 @@ const CompanySchema = new Schema({
   employees: {
     type: Number,
   },
+  createdDate: {
+    type: Date,
+    default: Date.now,
+  },
   description: {
     type: String,
     required: true,
+  },
+  address: {
+    type: String,
+    require: true,
   },
   latitude: {
     type: Number,

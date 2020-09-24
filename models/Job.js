@@ -50,6 +50,10 @@ const JobSchema = new Schema({
     type: String,
     required: true,
   },
+  isShared: {
+    type: Boolean,
+    default: true,
+  },
   date: {
     type: Date,
     default: Date.now,
