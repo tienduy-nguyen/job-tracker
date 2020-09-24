@@ -46,4 +46,4 @@ const UserJobSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('user_job', UserJobSchema);
+module.exports = mongoose.model('userJob', UserJobSchema);

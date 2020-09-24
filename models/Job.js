@@ -6,6 +6,12 @@ const JobSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'company',
   },
+  userJobs: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'userJob',
+    },
+  ],
   title: {
     type: String,
     required: true,

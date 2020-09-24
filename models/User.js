@@ -24,6 +24,18 @@ const UserSchema = new Schema({
   avatar: {
     type: String,
   },
+  notices: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'notice',
+    },
+  ],
+  userJobs: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'userJob',
+    },
+  ],
   date: {
     type: Date,
     default: Date.now,
