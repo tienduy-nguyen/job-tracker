@@ -86,4 +86,27 @@ router.get('/:id', [auth, checkObjectId('id')], async (req, res) => {
   }
 });
 
+// @route    DELETE api/companies/:id
+// @desc     Delete company
+// @access   Private
+router.delete('/:id', [auth, checkObjectId('id')], async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id);
+    if (!user.isAdmin) {
+      return res.status(401).json({ msg: 'User not authorized' });
+    }
+    const company = await Company.findById(req.params.id);
+    if (!company) {
+      return res.status(404).json({ msg: 'Company not found' });
+    }
+
+    await company.remove();
+
+    res.json({ msg: 'Company removed' });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
 module.exports = router;
