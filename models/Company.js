@@ -8,6 +8,9 @@ const CompanySchema = new Schema(
       required: true,
       unique: true,
     },
+    slug: {
+      type: String,
+    },
     website: {
       type: String,
     },
