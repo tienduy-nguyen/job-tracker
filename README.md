@@ -1,4 +1,4 @@
-# job-tracker
+# Job Tracker
 
 Track applied jobs.
 

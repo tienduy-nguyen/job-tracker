@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 const NoticeSchema = new Schema(
   {
+    user: {
+      type: Schema.Types.ObjectId,
+      required: true,
+    },
     description: {
       type: String,
       required: true,

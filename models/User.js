@@ -30,18 +30,6 @@ const UserSchema = new Schema(
       type: Boolean,
       default: false,
     },
-    notices: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'notice',
-      },
-    ],
-    userJobs: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'userJob',
-      },
-    ],
   },
   { timestamps: true }
 );

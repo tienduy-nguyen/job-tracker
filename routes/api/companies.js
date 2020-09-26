@@ -27,14 +27,10 @@ router.post(
 // @access   Private
 router.get('/', auth, companiesController.getCompanies);
 
-// @route    GET api/companies/:id
+// @route    GET api/companies/:slug
 // @desc     Get company by ID
 // @access   Private
-router.get(
-  '/:id',
-  [auth, checkObjectId('id')],
-  companiesController.getCompaniesById
-);
+router.get('/:slug', auth, companiesController.getCompaniesByName);
 
 // @route    DELETE api/companies/:id
 // @desc     Delete company

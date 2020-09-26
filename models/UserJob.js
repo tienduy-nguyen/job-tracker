@@ -38,7 +38,7 @@ const UserJobSchema = new Schema(
       type: Date.now,
       default: Date.now,
     },
-    notice: {
+    personalNotice: {
       type: String,
     },
   },

@@ -1,5 +1,6 @@
 const { validationResult } = require('express-validator');
 const Company = require('../models/Company');
+const User = require('../models/User');
 const slugify = require('slugify');
 
 exports.createCompany = async (req, res) => {
@@ -52,9 +53,19 @@ exports.getCompanies = async (req, res) => {
 
 exports.getCompaniesById = async (req, res) => {
   try {
-    const company = await (await Company.findById(req.params.id)).populate(
-      'jobs'
-    );
+    const company = await Company.findById(req.params.id);
+    if (!company) {
+      return res.status(404).json({ msg: 'Company not found' });
+    }
+    res.json(company);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+};
+exports.getCompaniesByName = async (req, res) => {
+  try {
+    const company = await Company.findOne({ slug: req.params.slug });
     if (!company) {
       return res.status(404).json({ msg: 'Company not found' });
     }

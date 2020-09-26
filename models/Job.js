@@ -7,12 +7,6 @@ const JobSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: 'company',
     },
-    userJobs: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'userJob',
-      },
-    ],
     title: {
       type: String,
       required: true,
@@ -54,6 +48,11 @@ const JobSchema = new Schema(
     isShared: {
       type: Boolean,
       default: true,
+    },
+    created_by: {
+      type: Schema.Types.ObjectId,
+      ref: 'user',
+      required: true,
     },
   },
   { timestamps: true }

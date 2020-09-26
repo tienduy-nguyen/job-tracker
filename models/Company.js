@@ -35,12 +35,6 @@ const CompanySchema = new Schema(
     longitude: {
       type: Number,
     },
-    jobs: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'job',
-      },
-    ],
   },
   { timestamps: true }
 );

@@ -3,9 +3,9 @@ const router = express.Router();
 const { check } = require('express-validator');
 const usersController = require('../../controllers/users');
 
-//@route GET api/user
-//@desc Register user
-//Access Public
+// @route GET api/user
+// @desc Register user
+// @access Public
 router.post(
   '/',
 
