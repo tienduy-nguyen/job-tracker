@@ -1,6 +1,7 @@
 const { validationResult } = require('express-validator');
 const Company = require('../models/Company');
 const User = require('../models/User');
+const Job = require('../models/Job');
 const slugify = require('slugify');
 
 exports.createCompany = async (req, res) => {

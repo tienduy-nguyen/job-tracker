@@ -71,10 +71,16 @@ jobsRouter.post(
 );
 
 // @route GET /companies/:slug/jobs
-// @desc GET all jobs of companies
+// @desc GET all jobs of a companie specific
 // @access Private
 jobsRouter.get('/', auth, async (req, res) => {
   try {
+    // Get all jobs: /companies/alljobs
+    if (req.originalUrl.endsWith('all/jobs')) {
+      const jobs = await Job.find();
+      return res.json(jobs);
+    }
+    //Get company by name specific
     const company = await Company.findOne({ slug: req.params.slug });
     const jobs = await Job.find({ company });
     res.json(jobs);
