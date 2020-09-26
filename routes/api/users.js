@@ -22,4 +22,7 @@ router.post(
   usersController.createUser
 );
 
+// @route    PUT api/users/jobs
+// @desc     Add user applied jobs
+// @access   Private
 module.exports = router;

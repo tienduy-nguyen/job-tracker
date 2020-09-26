@@ -14,7 +14,7 @@ exports.createUser = async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { firstName, lastName, email, password } = req.body;
+  const { username, email, password } = req.body;
 
   try {
     //See if user exists
@@ -22,18 +22,10 @@ exports.createUser = async (req, res) => {
     if (user) {
       return res.status(400).json({ errors: [{ msg: 'User already exists' }] });
     }
-    // Get users gravatar
-    const avatar = gravatar.url(email, {
-      s: '200',
-      r: 'pg',
-      d: 'mm',
-    });
 
     user = new User({
-      firstName,
-      lastName,
+      username,
       email,
-      avatar,
       password,
     });
     //Encrypty password
