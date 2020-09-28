@@ -26,6 +26,7 @@ const UserSchema = new Schema(
         job: {
           type: Schema.Types.ObjectId,
           ref: 'job',
+          unique: true,
         },
         employer: [{ name: String, description: String }],
         failed: {
@@ -37,20 +38,16 @@ const UserSchema = new Schema(
           default: false,
         },
         interview1: {
-          type: Date.now,
-          default: Date.now,
+          type: Date,
         },
         interview2: {
-          type: Date.now,
-          default: Date.now,
+          type: Date,
         },
         interview3: {
-          type: Date.now,
-          default: Date.now,
+          type: Date,
         },
         interview4: {
-          type: Date.now,
-          default: Date.now,
+          type: Date,
         },
         notice: {
           type: String,
