@@ -12,3 +12,5 @@ Track applied jobs.
   
 ## Features
 
+---
+Working in progress
